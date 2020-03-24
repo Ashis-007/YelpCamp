@@ -1,0 +1,87 @@
+/* defaults */
+
+html,
+body {
+  font-size: 62.5%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  text-decoration: none;
+  border: 0;
+}
+
+/* navbar */
+
+.navbar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand-title {
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 1.5rem 2.3rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  padding: 2rem 2rem;
+}
+
+.nav-item a {
+  font-size: 1.8rem;
+}
+
+.login,
+.signup {
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
+.login {
+  padding: 0.5rem 1.5rem;
+  background-color: #0084ff;
+}
+
+.login a {
+  color: white;
+}
+
+.signup {
+  padding: 0.2rem 0.9rem;
+}
+
+.signup a {
+  font-weight: 600;
+}
+
+.contact {
+  margin: 0.3rem auto;
+}
+
+/* footer */

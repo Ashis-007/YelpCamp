@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campgrounds | YelpCamp</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/campgrounds.css" />
+  </head>
+  <body>
+    <header>
+      <%- include("partials/header"); %>
+    </header>
+    <main>
+      <h2 class="heading">Campgrounds</h2>
+      <div class="container">
+        <% campgrounds.forEach((campground) => { %>
+
+        <div class="card">
+          <img src="<%= campground.imageURL %>" alt="" />
+          <div class="title"><%= campground.name %></div>
+        </div>
+
+        <% }) %>
+      </div>
+    </main>
+  </body>
+</html>
