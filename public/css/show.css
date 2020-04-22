@@ -1,0 +1,77 @@
+.container {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.campground-section {
+  width: 70%;
+  border: 2px solid #eee8e8;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  background-color: #f7f7f7;
+}
+
+.part {
+  margin-bottom: 2.5rem;
+}
+
+.name {
+  font-size: 3rem;
+  padding: 1rem 1rem 0;
+}
+
+.image img {
+  width: 100%;
+}
+
+.desc {
+  font-size: 1.6rem;
+  padding: 0 1rem;
+}
+
+/* COMMENTS */
+
+.comment-section {
+  width: 70%;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+  position: relative;
+  border: 2px solid #eee8e8;
+  border-radius: 0.5rem;
+  background-color: #f7f7f7;
+}
+
+.comment-heading {
+  font-size: 2.3rem;
+  margin: 1rem 0 1rem;
+}
+
+.btn-comment {
+  font-size: 1.6rem;
+  background: #43be31;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 1rem 2rem;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1rem 1rem;
+}
+
+.btn-comment:hover {
+  background: #019031;
+}
+
+.comment .author,
+.comment p {
+  font-size: 1.6rem;
+}
+
+.author {
+  margin: 1rem 0rem 0.2rem;
+}
+
+.comment:last-child {
+  margin-bottom: 2rem;
+}

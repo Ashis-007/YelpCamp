@@ -16,10 +16,16 @@
 
 .card {
   background-color: rgba(199, 200, 209, 0.5);
+  transform: translateY(0px);
+  transition: 0.3s ease-in;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
 .card:hover {
   box-shadow: 2px 5px 10px rgb(199, 200, 209);
+  transform: translateY(-15px);
 }
 
 .card img {
@@ -30,4 +36,9 @@
   font-size: 2.2rem;
   text-align: center;
   padding: 1rem;
+}
+
+.card a {
+  font-size: 1.7rem;
+  color: #0084c2;
 }

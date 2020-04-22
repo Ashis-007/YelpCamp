@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= campground.name %></title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/show.css" />
+  </head>
+  <body>
+    <header>
+      <%- include("../partials/header"); %>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="campground-section">
+          <h2 class="part name"><%= campground.name %></h2>
+          <div class="part image">
+            <img src="<%= campground.imageURL %>" alt="" />
+          </div>
+
+          <div class="part desc">
+            <%= campground.description %>
+          </div>
+        </div>
+
+        <div class="part comment-section">
+          <h3 class="comment-heading">Comments</h3>
+          <a
+            href="/campgrounds/<%= campground._id %>/comments/new"
+            class="btn-comment"
+            >Leave a comment</a
+          >
+          <% campground.comments.forEach((comment) => { %>
+          <div class="comment">
+            <h4 class="author"><%= comment.author %></h4>
+            <p>
+              <%= comment.text %>
+            </p>
+          </div>
+
+          <% }) %>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <%- include("partials/header"); %>
+      <%- include("../partials/header"); %>
     </header>
     <main>
       <h2 class="heading">Campgrounds</h2>
@@ -19,6 +19,7 @@
         <div class="card">
           <img src="<%= campground.imageURL %>" alt="" />
           <div class="title"><%= campground.name %></div>
+          <a href="/campgrounds/<%= campground._id %>">Read more</a>
         </div>
 
         <% }) %>
