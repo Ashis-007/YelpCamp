@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Comment</title>
+    <title>Edit Comment</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/newComment.css" />
   </head>
+
   <body>
     <header>
       <%- include("../partials/header"); %>
@@ -15,11 +16,15 @@
     <main>
       <div class="container">
         <form
-          action="/campgrounds/<%= campground._id %>/comments"
+          action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT"
           method="POST"
         >
           <div class="text">
-            <input type="text" name="comment[text]" placeholder="Comment" />
+            <input
+              type="text"
+              name="comment[text]"
+              value="<%= comment.text.trim() %>"
+            />
           </div>
 
           <input type="submit" class="submit" value="Post" />

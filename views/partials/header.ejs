@@ -1,25 +1,31 @@
 <nav class="navbar">
-  <h2 class="brand-title">YelpCamp</h2>
+  <h2 class="brand-title"><a href="/">YelpCamp</a></h2>
   <ul class="nav-links">
     <% if(!user) { %>
 
     <li class="nav-item">
-      <button class="btn login"><a href="/login">Login</a></button>
+      <a href="/login">Login</a>
     </li>
     <li class="nav-item">
-      <button class="btn signup">
-        <a href="/register">Sign Up</a>
-      </button>
+      <a class="signup" href="/register">Sign Up</a>
     </li>
 
     <% } else { %>
-
     <li class="nav-item">
-      <button class="btn contact">
-        <a href="/logout">Logout</a>
-      </button>
+      <a class="username" href="">Signed in as <%= user.username %> </a>
+    </li>
+    <li class="nav-item">
+      <a href="/logout">Logout</a>
     </li>
 
     <% } %>
   </ul>
 </nav>
+
+<div class="alert-msg">
+  <% if(success && success.length > 0) { %>
+  <div class="success-msg"><%= success %></div>
+  <% } %> <% if(error && error.length > 0) { %>
+  <div class="error-msg"><%= error %></div>
+  <% } %>
+</div>

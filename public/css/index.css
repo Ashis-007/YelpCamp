@@ -6,6 +6,8 @@
   background-color: #f7f7f7;
   padding-left: 2rem;
   padding-top: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
 .heading {
@@ -43,7 +45,6 @@
 
 .card {
   background-color: rgba(199, 200, 209, 0.5);
-  cursor: pointer;
   transform: translateY(0px);
   transition: 0.3s ease-in;
 }

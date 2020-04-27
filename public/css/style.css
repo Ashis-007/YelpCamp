@@ -36,6 +36,7 @@ button {
   height: auto;
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid #f7f7f7;
 }
 
 .brand-title {
@@ -57,23 +58,11 @@ button {
   font-size: 1.8rem;
 }
 
-.login,
 .signup {
-  border-radius: 2rem;
-  padding: 0.5rem;
-}
-
-.login {
-  padding: 0.5rem 1.5rem;
-  background-color: #0084ff;
-}
-
-.login a {
+  padding: 0.5rem 1rem;
+  background: #0084ff;
+  border-radius: 3rem;
   color: white;
-}
-
-.signup {
-  padding: 0.2rem 0.9rem;
 }
 
 .signup a {

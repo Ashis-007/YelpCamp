@@ -9,6 +9,7 @@
   border-radius: 0.5rem;
   margin-bottom: 2rem;
   background-color: #f7f7f7;
+  position: relative;
 }
 
 .part {
@@ -29,6 +30,37 @@
   padding: 0 1rem;
 }
 
+.creator {
+  font-size: 1.4rem;
+  padding: 0 1rem;
+}
+
+.buttons {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.edit,
+.delete {
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background: #f4c724;
+  margin: 1rem 1rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.edit {
+  background: #f4c724;
+}
+
+.delete {
+  background: #ff3031;
+  color: white;
+}
+
 /* COMMENTS */
 
 .comment-section {
@@ -41,9 +73,13 @@
   background-color: #f7f7f7;
 }
 
+.comment {
+  position: relative;
+}
+
 .comment-heading {
   font-size: 2.3rem;
-  margin: 1rem 0 1rem;
+  margin: 1rem 0 3rem;
 }
 
 .btn-comment {
@@ -74,4 +110,37 @@
 
 .comment:last-child {
   margin-bottom: 2rem;
+}
+
+.comment-buttons {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 3rem;
+  top: 0.5rem;
+  bottom: 0;
+}
+
+.edit-comment,
+.delete-comment {
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  margin: 1rem 1rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.edit-comment {
+  background: #f4c724;
+  /* position: absolute;
+  right: 0.5rem;
+  top: 0rem; */
+}
+
+.delete-comment {
+  background: #ff3031;
+  color: white;
 }
