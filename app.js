@@ -47,12 +47,31 @@ app.use("/", authRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-mongoose
-  .connect("mongodb://localhost:27017/yelpdb", {
+// LOCAL DATABASE
+/* mongoose
+  .connect("mongodb://localhost/yelpdb", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
   })
-  .then(() => console.log("===DB Connected==="));
+  .then(() => console.log("===DB Connected==="))
+  .catch((err) => {
+    console.log(err);
+  }); */
 
-app.listen(5000);
+// CLOUD DATABASE
+mongoose
+  .connect(
+    "mongodb+srv://ashis007:IamAshis007@cluster0-u0lk8.mongodb.net/test?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+    }
+  )
+  .then(() => console.log("===DB Connected==="))
+  .catch((err) => {
+    console.log(err);
+  });
+
+app.listen(process.env.PORT || 3000);
