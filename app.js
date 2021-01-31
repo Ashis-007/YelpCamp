@@ -69,7 +69,7 @@ mongoose
       useFindAndModify: false,
     }
   )
-  .then(() => console.log("===DB Connected==="))
+  .then(() => console.log("=== DB Connected ==="))
   .catch((err) => {
     console.log(err);
   });
