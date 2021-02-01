@@ -1,8 +1,8 @@
 const express = require("express"),
   router = express.Router({ mergeParams: true });
 
-const Campground = require("../models/campground"),
-  Comment = require("../models/comment");
+const Campground = require("../schema/campground"),
+  Comment = require("../schema/comment");
 
 const { isLoggedIn, checkCommentAuthor } = require("../middleware");
 

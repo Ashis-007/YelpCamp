@@ -7,7 +7,7 @@ const express = require("express"),
   methodOverride = require("method-override"),
   flash = require("connect-flash");
 
-const User = require("./models/user");
+const User = require("./schema/user");
 
 const campgroundRoutes = require("./routes/campgrounds"),
   commentRoutes = require("./routes/comments"),

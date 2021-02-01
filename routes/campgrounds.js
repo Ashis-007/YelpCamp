@@ -1,7 +1,7 @@
 const express = require("express"),
   router = express.Router();
 
-const Campground = require("../models/campground");
+const Campground = require("../schema/campground");
 const { isLoggedIn, checkCampgroundAuthor } = require("../middleware");
 
 // GET Route

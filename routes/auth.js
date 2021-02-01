@@ -3,7 +3,7 @@ const express = require("express"),
   path = require("path"),
   passport = require("passport");
 
-const User = require("../models/user");
+const User = require("../schema/user");
 
 // INDEX Route
 router.get("/", (req, res) => {
