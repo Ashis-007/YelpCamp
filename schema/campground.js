@@ -1,23 +1,21 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const campgroundSchema = new mongoose.Schema({
+// TODO: add images
+const campgroundSchema = new Schema({
   name: String,
-  imageURL: String,
+  images: [],
   description: String,
-
+  location: String,
+  price: Number,
   author: {
-    id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-
-    username: String,
+    type: Schema.Types.ObjectId,
+    ref: "User",
   },
-
-  comments: [
+  reviews: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Comment",
+      type: Schema.Types.ObjectId,
+      ref: "Review",
     },
   ],
 });

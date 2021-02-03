@@ -65,8 +65,8 @@ mongoose
     "mongodb+srv://ashis007:IamAshis007@cluster0-u0lk8.mongodb.net/test?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
+      useCreateIndex: true,
       useUnifiedTopology: true,
-      useFindAndModify: false,
     }
   )
   .then(() => console.log("=== DB Connected ==="))
