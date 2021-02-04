@@ -1,23 +1,15 @@
 const express = require("express"),
   router = express.Router();
-
 const Campground = require("../schema/campground");
 const { isLoggedIn, checkCampgroundAuthor } = require("../middleware");
+const campgroundController = require("../controllers/campgrounds");
 
 // GET Route
-router.get("/", (req, res) => {
-  Campground.find({}, (err, campgrounds) => {
-    if (err) {
-      console.log("Something went wrong!");
-    } else {
-      res.render("campgrounds/campgrounds", { campgrounds });
-    }
-  });
-});
+router.get("/", campgroundController.getAllCampgrounds);
 
-router.get("/new", isLoggedIn, (req, res) => {
-  res.render("campgrounds/new");
-});
+// router.get("/new", isLoggedIn, (req, res) => {
+//   res.render("campgrounds/new");
+// });
 
 // POST Route
 router.post("/", isLoggedIn, (req, res) => {
@@ -49,29 +41,29 @@ router.post("/", isLoggedIn, (req, res) => {
 });
 
 // SHOW Route
-router.get("/:id", (req, res) => {
-  Campground.findById(req.params.id)
-    .populate("comments")
-    .exec((err, campground) => {
-      if (err) {
-        console.log(err);
-        return res.redirect("back");
-      }
-      res.render("campgrounds/show", { campground });
-    });
-});
+// router.get("/:id", (req, res) => {
+//   Campground.findById(req.params.id)
+//     .populate("comments")
+//     .exec((err, campground) => {
+//       if (err) {
+//         console.log(err);
+//         return res.redirect("back");
+//       }
+//       res.render("campgrounds/show", { campground });
+//     });
+// });
 
 // EDIT Route
-router.get("/:id/edit", isLoggedIn, checkCampgroundAuthor, (req, res) => {
-  Campground.findById(req.params.id, (err, campground) => {
-    if (err || !campground) {
-      console.log(err);
-      return res.redirect("/campgrounds");
-    }
+// router.get("/:id/edit", isLoggedIn, checkCampgroundAuthor, (req, res) => {
+//   Campground.findById(req.params.id, (err, campground) => {
+//     if (err || !campground) {
+//       console.log(err);
+//       return res.redirect("/campgrounds");
+//     }
 
-    res.render("campgrounds/edit", { campground });
-  });
-});
+//     res.render("campgrounds/edit", { campground });
+//   });
+// });
 
 // UPDATE Route
 router.put("/:id", isLoggedIn, checkCampgroundAuthor, (req, res) => {
@@ -90,16 +82,11 @@ router.put("/:id", isLoggedIn, checkCampgroundAuthor, (req, res) => {
 });
 
 // DESTROY Route
-router.delete("/:id", isLoggedIn, checkCampgroundAuthor, (req, res) => {
-  Campground.deleteOne({ _id: req.params.id }, (err) => {
-    if (err) {
-      console.log(err);
-      return res.redirect(`/campgrounds/${req.params.id}`);
-    }
-
-    req.flash("error", "Campground deleted successfully!");
-    res.redirect("/campgrounds");
-  });
-});
+router.delete(
+  "/:id",
+  isLoggedIn,
+  checkCampgroundAuthor,
+  campgroundController.deleteCampground
+);
 
 module.exports = router;

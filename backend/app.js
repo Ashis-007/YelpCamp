@@ -6,6 +6,7 @@ const express = require("express"),
   localStrategy = require("passport-local"),
   methodOverride = require("method-override"),
   flash = require("connect-flash");
+const morgan = require("morgan");
 
 const User = require("./schema/user");
 
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(flash());
+app.use(morgan("dev"));
 
 // PASSPORT CONFIGURATION
 app.use(
