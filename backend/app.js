@@ -11,7 +11,7 @@ const morgan = require("morgan");
 const User = require("./schema/user");
 
 const campgroundRoutes = require("./routes/campgrounds"),
-  commentRoutes = require("./routes/comments"),
+  reviewRoutes = require("./routes/review"),
   authRoutes = require("./routes/auth");
 
 // const seedDB = require("./seeds");
@@ -47,7 +47,7 @@ app.use(function (req, res, next) {
 
 app.use("/", authRoutes);
 app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/campgrounds/:id/reviews", reviewRoutes);
 
 // LOCAL DATABASE
 /* mongoose

@@ -7,10 +7,6 @@ const campgroundController = require("../controllers/campgrounds");
 // GET Route
 router.get("/", campgroundController.getAllCampgrounds);
 
-// router.get("/new", isLoggedIn, (req, res) => {
-//   res.render("campgrounds/new");
-// });
-
 // POST Route
 router.post("/", isLoggedIn, (req, res) => {
   let name = req.body.campgroundName,
